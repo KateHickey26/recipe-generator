@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fridge to Fork</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      color: #777;
+    }
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .input-section {
+      margin-bottom: 1.5rem;
+    }
+    .input-section label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .input-section input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .generate-btn {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .generate-btn:hover {
+      background-color: #45a049;
+    }
+    .recipe-output {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-top: 2rem;
+    }
+    .recipe-output h2 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #aaa;
+      margin: 4rem 0 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fridge to Fork</h1>
+    <p>Create delicious recipes from what you've got!</p>
+  </header>
+
+  <div class="container">
+    <div class="input-section">
+      <label for="ingredients">Enter ingredients you have:</label>
+      <input type="text" id="ingredients" placeholder="e.g. eggs, tomato, cheese" />
+      <button class="generate-btn">Generate Recipe</button>
+    </div>
+
+    <div class="recipe-output" id="recipe">
+      <!-- Recipe will appear here -->
+      <h2>Recipe Title</h2>
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>1 Tomato</li>
+        <li>2 Eggs</li>
+        <li>50g Cheese</li>
+      </ul>
+      <h3>Instructions:</h3>
+      <ol>
+        <li>Chop the tomato and cheese.</li>
+        <li>Whisk the eggs and add the chopped ingredients.</li>
+        <li>Cook in a pan for 5–7 minutes until set.</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ and leftovers · <a href="#">GitHub</a>
+  </footer>
+</body>
+    <script type="module" src="script.js"></script>
+</html>
