@@ -1,11 +1,15 @@
 # recipe-generator
 Powered by AI.
 
-A quick app build to test out OpenAI API calls within a webpage.
+A quick app built to test out OpenAI's GPT API calls within a webpage.
 
 ---
 
-Try it out locally by running:
+Try it out locally:
+
+1. Clone the repo
+2. Install dependencies
+3. Run the dev server
 
 ```bash
 npm install
@@ -15,7 +19,7 @@ npm run dev
 ---
 
 The app is pretty simplistic, it renders the OpenAI API response into a recipe format.
-```html
+
 <p align="center">
-  <img src="recipe-generator/assets/screenshot.png" alt="Fridge to Fork Screenshot" width="600" />
+  <img src="recipe-generator/assets/screenshot.png" alt="Recipe Generator app screenshot" width="600" />
 </p>
