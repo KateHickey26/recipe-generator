@@ -31,6 +31,24 @@
       color: #777;
       margin-top: 0.5rem;
     }
+
+    .header-emoji {
+      font-size: 5rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      animation: wave-with-delay 10s ease-in-out infinite;
+      transform-origin: 70% 70%;
+    }
+
+    @keyframes wave-with-delay {
+      0% { transform: rotate(0deg); }
+      5% { transform: rotate(14deg); }
+      10% { transform: rotate(-8deg); }
+      15% { transform: rotate(10deg); }
+      20% { transform: rotate(0deg); }
+      /* Stay still for the rest of the cycle */
+      100% { transform: rotate(0deg); }
+    }
   
     .container {
       max-width: 700px;
@@ -143,6 +161,8 @@
 </head>
 <body>
   <header>
+    <div class="header-emoji" aria-hidden="true">👩‍🍳</div>
+
     <h1>Recipe Generator</h1>
     <p>Create delicious recipes from what you've got!</p>
   </header>
