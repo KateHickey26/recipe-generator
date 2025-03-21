@@ -10,11 +10,12 @@ Try it out locally by running:
 ```bash
 npm install
 npm run dev
+```
 
 ---
 
 The app is pretty simplistic, it renders the OpenAI API response into a recipe format.
 ```html
 <p align="center">
-  <img src="./assets/screenshot.png" alt="Fridge to Fork Screenshot" width="600" />
+  <img src="recipe-generator/assets/screenshot.png" alt="Fridge to Fork Screenshot" width="600" />
 </p>
