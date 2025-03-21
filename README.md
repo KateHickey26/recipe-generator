@@ -21,5 +21,5 @@ npm run dev
 The app is pretty simplistic, it renders the OpenAI API response into a recipe format.
 
 <p align="center">
-  <img src="recipe-generator/assets/screenshot.png" alt="Recipe Generator app screenshot" width="600" />
+  <img src="recipe-generator/assets/recipe-generator.png" alt="Recipe Generator app screenshot" width="600" />
 </p>
