@@ -30,6 +30,8 @@ npm install
 npm run dev
 ```
 
+Visit `http://localhost:5173` in your browser.
+
 ---
 
 ## Environment Variable
@@ -37,6 +39,17 @@ npm run dev
 To use the OpenAI API, create a `.env` file in the project root:
 
     VITE_OPENAI_API_KEY=your_openai_key_here
+
+---
+
+## Features
+
+- Enter ingredients and get a full recipe (title, ingredients, steps)
+- Clean, responsive layout with animated UI
+- Fun waving chef emoji and cooking-themed loading spinner
+- Fully client-side: no database or backend needed
+- OpenAI integration with structured JSON output for clean rendering
+- Deployed with continuous updates via Vercel and GitHub
 
 ---
 
