@@ -2,6 +2,7 @@ const input = document.getElementById('ingredients');
 const button = document.querySelector('.generate-btn');
 const recipeDiv = document.getElementById('recipe');
 const spinner = document.getElementById('loading-spinner');
+const allowExtras = document.getElementById('allowExtras');
 
 button.addEventListener('click', async () => {
   const ingredients = input.value.trim();
@@ -13,7 +14,16 @@ button.addEventListener('click', async () => {
   recipeDiv.innerHTML = '';
   spinner.style.display = 'block';
 
-  try {
+  // Check if the user wants to include extra ingredients
+  const includeExtras = allowExtras.checked;
+  const basePrompt = `Here are the ingredients I have: ${ingredients}. What can I make?`;
+  const extraNote = includeExtras
+    ? 'You may include one or two additional ingredients if they will improve the recipe. Respond ONLY in JSON format.'
+    : 'Only use the ingredients provided. Respond ONLY in JSON format.';
+  const prompt = `${basePrompt} ${extraNote}`;
+
+  try { 
+    // Make the API call to OpenAI
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -26,11 +36,11 @@ button.addEventListener('click', async () => {
           {
             role: 'system',
             content:
-              'You are a helpful chef. Given a list of potential ingredients, return a simple recipe in JSON format with a "title", an "ingredients" array, and an "instructions" array. Please do not number the instructions. You do not need to use all the ingredients, but do not suggest a recipe which uses an ingredient we do not have.'
+              'You are a helpful chef. Given a list of potential ingredients, return a simple recipe in JSON format with a "title", an "ingredients" array, and an "instructions" array. Please do not number the instructions. You do not need to use all the ingredients. If you can make a recipe with fewer ingredients, that is fine. The recipe should be simple and easy to follow. The instructions should be clear and concise. Do not include any additional information or commentary. Just provide the JSON response.'
           },
           {
             role: 'user',
-            content: `Here are the ingredients I have: ${ingredients}. What can I make? Respond ONLY in JSON format.`
+            content: `${prompt}`
           }
         ],
         temperature: 0.7

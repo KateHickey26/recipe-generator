@@ -169,18 +169,24 @@
 
   <div class="container">
     <div class="input-section">
-      <label for="ingredients">Enter ingredients you have:</label>
+      <label for="ingredients">Enter the ingredients you have:</label>
       <input type="text" id="ingredients" placeholder="e.g. eggs, tomato, cheese" />
-      <button class="generate-btn">Generate a recipe</button>
+
+      <div style="margin-top: 0.5rem;">
+        <input type="checkbox" id="allowExtras" />
+        <label for="allowExtras" style="font-weight: normal;">I'm happy to buy one or two extra things for my recipe if needed!</label>
+      </div>
+
+      <button style="margin-top: 2rem;" class="generate-btn">Generate a recipe</button>
     </div>
 
     <div class="recipe-output" id="recipe">
-      <h4>This recipe generator will show you something you can cook with whatever you already have in your kitchen! Please enter your ingredients above.
-
-
-      </h4>
-        
-      <h2>Example Recipe: Cheese and tomato scrambled eggs</h2>
+      <p>This recipe generator will give you something delicious you can cook, using whatever ingredients you already have in your kitchen! </p>
+      <p>Please enter your ingredients above to get started.
+      </p>
+      <p>Example output recipe:</p>
+      <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ccc;">
+      <h2>Cheese and tomato scrambled eggs</h2>
       <h3>Ingredients:</h3>
       <ul>
         <li>1 Tomato</li>
