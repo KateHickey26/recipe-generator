@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: light;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -23,11 +23,11 @@ a:hover {
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 h1 {
@@ -35,11 +35,165 @@ h1 {
   line-height: 1.1;
 }
 
+header {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+.header-emoji {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  animation: wave-with-delay 10s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-with-delay {
+  0% { transform: rotate(0deg); }
+  5% { transform: rotate(14deg); }
+  10% { transform: rotate(-8deg); }
+  15% { transform: rotate(10deg); }
+  20% { transform: rotate(0deg); }
+  /* Stay still for the rest of the cycle */
+  100% { transform: rotate(0deg); }
+}
+
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-section label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.input-section input {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+input[type="text"],
+input[type="checkbox"] {
+  background-color: white;
+  color: #333;
+}
+
+.generate-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.generate-btn:hover {
+  background-color: #2563EB;
+}
+
+.recipe-output {
+  background-color: white;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-output h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #222;
+}
+
+.recipe-output h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: #444;
+}
+
+.recipe-output ul,
+.recipe-output ol {
+  margin-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.spinner {
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #3B82F6; /* Blue */
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+.cooking-spinner {
+  font-size: 3rem;
+  animation: sizzle 1.2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes sizzle {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+footer {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .recipe-output {
+    padding: 1.25rem;
+  }
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.no-bold-label {
+  font-weight: normal;
 }
 
 .logo {
@@ -80,6 +234,89 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.chip-container {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  background-color: #cfe2ff; /* light blue */
+  border: 1px solid #9ec5fe;
+  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  color: #084298;
+  font-weight: 500;
+}
+
+.chip span {
+  margin-right: 0.5rem;
+}
+
+.chip button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: #084298;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#ingredientInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.suggestions-list li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+}
+
+.suggestions-list li:last-child {
+  border-bottom: none;
+}
+
+.suggestions-list li:hover {
+  background-color: #f5f5f5;
 }
 
 @media (prefers-color-scheme: light) {
