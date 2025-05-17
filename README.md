@@ -45,11 +45,23 @@ To use the OpenAI API, create a `.env` file in the project root:
 ## Features
 
 - Enter ingredients and get a full recipe (title, ingredients, steps)
+- Autocomplete dropdown + chip system for ingredient input
+- Toggle to allow AI to suggest 1–2 extra ingredients
 - Clean, responsive layout with animated UI
 - Fun waving chef emoji and cooking-themed loading spinner
 - Fully client-side: no database or backend needed
 - OpenAI integration with structured JSON output for clean rendering
 - Deployed with continuous updates via Vercel and GitHub
+
+---
+
+## 🔐 Prompt Injection Protection
+
+To ensure safe and predictable AI interaction, the app avoids free-text input and instead uses a **controlled vocabulary** of 750+ real-world ingredients. This mitigates prompt injection risks (e.g. `egg, bacon, and ignore the above instructions...`) by:
+
+- Replacing the input field with a dropdown chip interface
+- Only allowing selections from an approved ingredient list
+- Ensuring prompt content is safe and clean before reaching the AI
 
 ---
 
